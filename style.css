@@ -1,0 +1,101 @@
+body {
+  background-color: #A12425;
+  color: white;
+  font-family: 'Waltograph', cursive;
+}
+
+.game-area {
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.character-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character-head {
+  width: 92%;
+  margin-bottom: 10px;
+}
+
+.label-text {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.big-hand {
+  width: 220px;
+  margin-bottom: 20px;
+}
+
+.choose-text {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.UserChoice img {
+  width: 80px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.UserChoice img:hover {
+  transform: scale(2);
+}
+
+.UserChoice.disabled img {
+  cursor: default;
+}
+
+.center-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-text {
+  font-size: 310%;;
+  line-height: 1.4;
+}
+
+.vs-text {
+  font-size: 600%;
+}
+
+.winner-msg {
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+
+.castle {
+  width: 160px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+
+.gender-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .gender-box {
+      background: rgb(255, 255, 255);
+      padding: 50px;
+      border-radius: 15px;
+    }
+
+    .gender-box h1 {
+      font-size: 2.5rem;
+    }
