@@ -12,7 +12,6 @@
 
 <body>
 
-<!-- FULLSCREEN CHARACTER SELECT -->
 <div id="genderScreen" class="gender-screen">
   <div class="gender-box text-center">
     <h1>Choose Your Character</h1>
@@ -29,12 +28,13 @@
   </div>
 </div>
 
+<div id="gameContainer" style="display:none;"></div>
+
 <main>
   <div class="container">
     <div class="container-fluid game-area">
       <div class="row text-center align-items-center">
 
-        <!-- PLAYER SIDE -->
         <div class="col-md-4 character-side">
           <img src="mickey.png" class="character-head" id="player-img">
           <h3 class="label-text" id="player-label">YOU: MICKEY</h3>
@@ -46,18 +46,16 @@
           <div class="UserChoice">
             <img src="rock1.png" onclick="playGame('rock')">
             <img src="paper1.png" onclick="playGame('paper')">
-            <img src="scissor1.png" onclick="playGame('scissors')">
+            <img src="scissor1.png" onclick="playGame('scissor')">
           </div>
         </div>
 
-        <!-- CENTER -->
         <div class="col-md-4 center-area">
           <h1>ROCK<br>PAPER<br>SCISSORS</h1>
           <h1>VS</h1>
           <p id="round-winner"></p>
         </div>
 
-        <!-- COMPUTER -->
         <div class="col-md-4 character-side">
           <img src="minnie.png" class="character-head" id="computer-img">
           <h3 class="label-text">COMPUTER</h3>
@@ -69,6 +67,8 @@
     </div>
   </div>
 </main>
+
+</div>
 
 <script src="script.js"></script>
 </body>

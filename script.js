@@ -14,6 +14,7 @@ function selectGender(gender) {
     playerImg.src = "mickey.png";
     playerLabel.textContent = "YOU: MICKEY";
     computerImg.src = "minnie.png";
+    document.getElementById("user-hand").src = "rock1.png";
   } else {
     playerCharacter = "minnie";
     computerCharacter = "mickey";
@@ -21,13 +22,19 @@ function selectGender(gender) {
     playerImg.src = "minnie.png";
     playerLabel.textContent = "YOU: MINNIE";
     computerImg.src = "mickey.png";
+    document.getElementById("user-hand").src = "rock2.png";
   }
 
   genderScreen.style.display = "none";
 }
 
 function getUserChoice(userInput) {
-  const handSuffix = playerCharacter === "minnie" ? "1.png" : "1.png";
+  let handSuffix;
+  if (playerCharacter === "mickey") {
+    handSuffix = "1.png";
+  } else {
+    handSuffix = "2.png";
+  }
   document.getElementById("user-hand").src = userInput + handSuffix;
   return userInput;
 }
@@ -35,10 +42,13 @@ function getUserChoice(userInput) {
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissor"];
   const choice = choices[Math.floor(Math.random() * 3)];
-
-  const handSuffix = computerCharacter === "minnie" ? "2.png" : "2.png";
+  let handSuffix;
+  if (computerCharacter === "mickey") {
+    handSuffix = "1.png";
+  } else {
+    handSuffix = "2.png";
+  }
   document.getElementById("computer-hand").src = choice + handSuffix;
-
   return choice;
 }
 
