@@ -1,13 +1,14 @@
 body {
   background-color: #A12425;
-  color: white;
   font-family: 'Waltograph', cursive;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .game-area {
-  min-height: 100vh;
-  padding-top: 40px;
+  background-color: #A12425;
 }
+
 
 .character-side {
   display: flex;
@@ -83,7 +84,7 @@ body {
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: #000;
+      background: #A12425;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -91,7 +92,7 @@ body {
     }
 
     .gender-box {
-      background: rgb(255, 255, 255);
+      background: #A12425;
       padding: 50px;
       border-radius: 15px;
     }

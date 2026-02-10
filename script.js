@@ -26,6 +26,7 @@ function selectGender(gender) {
   }
 
   genderScreen.style.display = "none";
+  document.getElementById("gameContainer").style.display = "block";
 }
 
 function getUserChoice(userInput) {
