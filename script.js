@@ -14,7 +14,9 @@ function selectGender(gender) {
     playerImg.src = "mickey.png";
     playerLabel.textContent = "YOU: MICKEY";
     computerImg.src = "minnie.png";
+
     document.getElementById("user-hand").src = "rock1.png";
+    document.getElementById("computer-hand").src = "rock2.png"; 
   } else {
     playerCharacter = "minnie";
     computerCharacter = "mickey";
@@ -22,7 +24,9 @@ function selectGender(gender) {
     playerImg.src = "minnie.png";
     playerLabel.textContent = "YOU: MINNIE";
     computerImg.src = "mickey.png";
+
     document.getElementById("user-hand").src = "rock2.png";
+    document.getElementById("computer-hand").src = "rock1.png";
   }
 
   genderScreen.style.display = "none";

@@ -1,11 +1,18 @@
+
 body {
-  background-color: #A12425;
-  font-family: 'Waltograph', cursive;
-  margin: 0;
-  overflow-x: hidden;
+  font-family: "highest-praise", sans-serif !important;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+
+button, h1, h3, h4, p {
+  color: black !important;
 }
 
 .game-area {
+  min-height: 100vh;
+  padding-top: 20px;
   background-color: #A12425;
 }
 
@@ -41,10 +48,11 @@ body {
   margin: 5px;
   cursor: pointer;
   transition: transform 0.2s;
+  overflow: hidden;
 }
 
 .UserChoice img:hover {
-  transform: scale(2);
+  transform: scale(1.1);
 }
 
 .UserChoice.disabled img {
@@ -100,3 +108,30 @@ body {
     .gender-box h1 {
       font-size: 2.5rem;
     }
+
+    html, body {
+      background-color: #A12425;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+
+    .gender-box button {
+  background-color: white;
+  color: black !important;
+  border: 3px solid black;
+  transition: all 0.3s ease;
+}
+
+
+.gender-box button:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: white !important;
+  box-shadow: 0 0 25px #ff0000;
+}
+
+.gender-box button:active {
+  transform: scale(0.95);
+}
