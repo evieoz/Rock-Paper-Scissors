@@ -74,7 +74,41 @@ function determineWinner(user, computer) {
 function playGame(userInput) {
   const userChoice = getUserChoice(userInput);
   const computerChoice = getComputerChoice();
+  const result = determineWinner(userChoice, computerChoice);
 
-  document.getElementById("round-winner").textContent =
-    determineWinner(userChoice, computerChoice);
+  document.getElementById("round-winner").textContent = result;
+
+  if (result === "YOU WON!") {
+
+    for (let i = 0; i < 30; i++) {
+      const confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+
+
+      const shapes = ["0%", "50%", "25%"]; 
+      confetti.style.borderRadius = shapes[Math.floor(Math.random() * shapes.length)];
+
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      confetti.style.left = Math.random() * window.innerWidth + "px";
+      confetti.style.width = 8 + Math.random() * 12 + "px";
+      confetti.style.height = 8 + Math.random() * 12 + "px";
+      confetti.style.animationDuration = 1 + Math.random() * 2 + "s";
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(confetti);
+
+      setTimeout(() => confetti.remove(), 2500);
+    }
+
+    for (let i = 0; i < 20; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.classList.add("sparkle");
+      sparkle.style.left = Math.random() * window.innerWidth + "px";
+      sparkle.style.width = 4 + Math.random() * 6 + "px";
+      sparkle.style.height = sparkle.style.width;
+      sparkle.style.animationDuration = 1 + Math.random() * 1.5 + "s";
+      sparkle.style.opacity = Math.random();
+      document.body.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 2000);
+    }
+  }
 }

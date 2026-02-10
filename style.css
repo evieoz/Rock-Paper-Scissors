@@ -117,21 +117,73 @@ button, h1, h3, h4, p {
     }
 
 
-    .gender-box button {
+.gender-box button {
   background-color: white;
   color: black !important;
   border: 3px solid black;
+  font-size: 1.5rem;
+  padding: 15px 30px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.gender-box button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,0,0,0.5), rgba(255, 255, 255, 0.5), rgba(255, 0, 0, 0.5));
+  transform: rotate(45deg) translateX(0);
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.gender-box button:hover::before {
+  transform: rotate(45deg) translateX(50%);
+}
 
 .gender-box button:hover {
-  transform: scale(1.1);
-  background-color: black;
   color: white !important;
-  box-shadow: 0 0 25px #ff0000;
+  box-shadow: 0 0 25px #ff0000, 0 0 50px #ffffff, 0 0 75px #ff0000;
+  transform: scale(1.15);
+  background-color: black;
 }
 
-.gender-box button:active {
-  transform: scale(0.95);
+.gender-box button span {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes sparkle-fall {
+  0% { transform: translateY(0) scale(0.5); opacity: 1; }
+  100% { transform: translateY(500px) scale(1.2); opacity: 0; }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -20px;
+  pointer-events: none;
+  animation: confetti-fall linear forwards;
+  border-radius: 0%;
+}
+
+.sparkle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: white;
+  top: -10px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle-fall linear forwards;
 }
