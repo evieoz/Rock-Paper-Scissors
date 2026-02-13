@@ -1,13 +1,10 @@
-
 body {
   font-family: "highest-praise", sans-serif !important;
-  font-weight: 400;
-  font-style: normal;
+  background-color: #A12425;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   color: black;
-}
-
-button, h1, h3, h4, p {
-  color: black !important;
 }
 
 .game-area {
@@ -16,7 +13,6 @@ button, h1, h3, h4, p {
   background-color: #A12425;
 }
 
-
 .character-side {
   display: flex;
   flex-direction: column;
@@ -24,13 +20,8 @@ button, h1, h3, h4, p {
 }
 
 .character-head {
-  width: 92%;
+  width: 90%;
   margin-bottom: 10px;
-}
-
-.label-text {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
 }
 
 .big-hand {
@@ -38,25 +29,15 @@ button, h1, h3, h4, p {
   margin-bottom: 20px;
 }
 
-.choose-text {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
 .UserChoice img {
   width: 80px;
   margin: 5px;
   cursor: pointer;
   transition: transform 0.2s;
-  overflow: hidden;
 }
 
 .UserChoice img:hover {
   transform: scale(1.1);
-}
-
-.UserChoice.disabled img {
-  cursor: default;
 }
 
 .center-area {
@@ -65,106 +46,97 @@ button, h1, h3, h4, p {
   align-items: center;
 }
 
-.title-text {
-  font-size: 310%;;
-  line-height: 1.4;
+.scoreboard {
+  display: flex;
+  gap: 40px;
+  margin: 20px 0;
 }
 
-.vs-text {
-  font-size: 600%;
+.score-box {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  border: 3px solid black;
+  min-width: 120px;
 }
 
-.winner-msg {
-  font-size: 1.8rem;
-  margin-top: 10px;
+.score-box h4 {
+  margin: 0;
 }
 
-.castle {
-  width: 160px;
-  margin-top: 0;
-  margin-bottom: 12px;
+.score-box p {
+  font-size: 2rem;
+  margin: 5px 0 0 0;
+  font-weight: bold;
 }
 
+.match-winner {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px black;
+}
+
+.reset-btn {
+  background: white;
+  border: 3px solid black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: 
+  transform 0.3s ease,
+  box-shadow 0.3s ease,
+  background 0.3s ease;
+}
+
+.reset-btn:hover {
+   transform: 
+    rotateX(15deg)
+    rotateY(-15deg)
+    translateY(-12px)
+    scale(1.1);
+
+  background: black;
+  color: white;
+
+  box-shadow:
+    0 15px 0 black,
+    0 25px 40px rgba(0,0,0,0.6);
+}
+
+
+.reset-btn:active {
+  transform: 
+    rotateX(5deg)
+    rotateY(-5deg)
+    translateY(-4px)
+    scale(1.05);
+
+  box-shadow:
+    0 6px 0 black,
+    0 12px 20px rgba(0,0,0,0.4);
+}
 
 .gender-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #A12425;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .gender-box {
-      background: #A12425;
-      padding: 50px;
-      border-radius: 15px;
-    }
-
-    .gender-box h1 {
-      font-size: 2.5rem;
-    }
-
-    html, body {
-      background-color: #A12425;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-
-.gender-box button {
-  background-color: white;
-  color: black !important;
-  border: 3px solid black;
-  font-size: 1.5rem;
-  padding: 15px 30px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #A12425;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
-.gender-box button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(120deg, rgba(255,0,0,0.5), rgba(255, 255, 255, 0.5), rgba(255, 0, 0, 0.5));
-  transform: rotate(45deg) translateX(0);
-  transition: all 0.5s ease;
-  z-index: 0;
-}
-
-.gender-box button:hover::before {
-  transform: rotate(45deg) translateX(50%);
-}
-
-.gender-box button:hover {
-  color: white !important;
-  box-shadow: 0 0 25px #ff0000, 0 0 50px #ffffff, 0 0 75px #ff0000;
-  transform: scale(1.15);
-  background-color: black;
-}
-
-.gender-box button span {
-  position: relative;
-  z-index: 1;
-}
 
 @keyframes confetti-fall {
   0% { transform: translateY(0) rotate(0deg); opacity: 1; }
   100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
-}
-
-@keyframes sparkle-fall {
-  0% { transform: translateY(0) scale(0.5); opacity: 1; }
-  100% { transform: translateY(500px) scale(1.2); opacity: 0; }
 }
 
 .confetti {
@@ -174,16 +146,35 @@ button, h1, h3, h4, p {
   top: -20px;
   pointer-events: none;
   animation: confetti-fall linear forwards;
-  border-radius: 0%;
 }
 
-.sparkle {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  background: white;
-  top: -10px;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: sparkle-fall linear forwards;
+.gender-btn {
+  background: #ffffff;      
+  color: #000;            
+  font-family: "highest-praise", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  margin: 10px;
+  border: 3px solid #000;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 0 #000; 
+  position: relative;
+}
+
+
+.gender-btn:hover {
+  transform: translateY(-5px) scale(1.15) rotate(-3deg);
+  background: linear-gradient(45deg, #c7c6c6, #ce0000); 
+  color: #fff;
+  text-shadow: 1px 1px 5px #000;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+
+.gender-btn:active {
+  transform: translateY(2px) scale(1.05) rotate(0deg);
+  box-shadow: 0 3px 0 #000;
 }

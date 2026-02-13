@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Mickey & Minnie Rock Paper Scissors</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="style.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://use.typekit.net/fhy2mav.css">
-  
+  <link rel="stylesheet" href="https://use.typekit.net/fhy2mav.css">
 </head>
 
 <body>
 
-<div id="genderScreen" class="gender-screen">
-  <div class="gender-box text-center">
-    <h1>Choose Your Character</h1>
 
-    <div class="mt-4">
-      <button class="btn btn-primary btn-lg m-3" onclick="selectGender('male')">
-        MALE (MICKEY)
-      </button>
-
-      <button class="btn btn-danger btn-lg m-3" onclick="selectGender('female')">
-        FEMALE (MINNIE)
-      </button>
+  <div id="genderScreen" class="gender-screen">
+    <div class="gender-box text-center">
+      <h1>Choose Your Character</h1>
+      <div class="mt-4">
+        <button class="gender-btn m-3" onclick="selectGender('male')">
+          MALE (MICKEY)
+        </button>
+        <button class="gender-btn m-3" onclick="selectGender('female')">
+          FEMALE (MINNIE)
+        </button>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="gameContainer" style="display:none;"></div>
 
-<main>
+  <main id="gameContainer" style="display:none;">
     <div class="container-fluid game-area">
-<div class="row text-center align-items-center g-0">
+      <div class="row text-center align-items-center g-0">
+
         <div class="col-md-4 character-side">
           <img src="mickey.png" class="character-head" id="player-img">
           <h3 class="label-text" id="player-label">YOU: MICKEY</h3>
-
           <img src="rock1.png" id="user-hand" class="big-hand">
 
           <h4 class="choose-text">CHOOSE</h4>
@@ -51,23 +49,35 @@
         <div class="col-md-4 center-area">
           <h1>ROCK<br>PAPER<br>SCISSORS</h1>
           <h1>VS</h1>
-          <p id="round-winner"></p>
+
+          <div class="scoreboard">
+            <div class="score-box">
+              <h4>YOU</h4>
+              <p id="user-score">0</p>
+            </div>
+            <div class="score-box">
+              <h4>COMPUTER</h4>
+              <p id="computer-score">0</p>
+            </div>
+          </div>
+
+          <h2 id="match-winner" class="match-winner"></h2>
+          <p id="round-winner" class="winner-msg"></p>
+
+          <button class="reset-btn" onclick="resetGame()">RESET GAME</button>
         </div>
 
         <div class="col-md-4 character-side">
           <img src="minnie.png" class="character-head" id="computer-img">
           <h3 class="label-text">COMPUTER</h3>
-
           <img src="rock2.png" id="computer-hand" class="big-hand">
         </div>
 
       </div>
     </div>
-  </div>
-</main>
+  </main>
 
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
